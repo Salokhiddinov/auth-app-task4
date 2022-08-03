@@ -14,6 +14,14 @@ function Signup() {
 
     const enteredUsername = inputUsername.current.value;
     const enteredPassword = inputPassword.current.value;
+    if (enteredUsername.trim().length === 0) {
+      alert("Please enter username.");
+      return false;
+    }
+    if (enteredPassword.trim().length === 0 || enteredPassword.length < 4) {
+      alert("Username should not be empty or less than 4 characters.");
+      return false;
+    }
     try {
       const token = localStorage.getItem("token");
       const res = await axios.get("/auth/users", {
@@ -88,3 +96,4 @@ function Signup() {
 }
 
 export default Signup;
+
