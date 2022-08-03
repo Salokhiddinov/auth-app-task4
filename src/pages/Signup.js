@@ -19,7 +19,7 @@ function Signup() {
       return false;
     }
     if (enteredPassword.trim().length === 0 || enteredPassword.length < 4) {
-      alert("Username should not be empty or less than 4 characters.");
+      alert("Password should not be empty or less than 4 characters.");
       return false;
     }
     try {
